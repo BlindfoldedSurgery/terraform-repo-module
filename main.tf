@@ -52,7 +52,7 @@ resource "github_branch_protection" "blocked" {
 
   enforce_admins   = true
   lock_branch      = true
-  blocks_creations = true
+  # blocks_creations = true
 }
 
 resource "github_actions_repository_permissions" "if_enabled" {
