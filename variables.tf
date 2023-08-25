@@ -10,10 +10,23 @@ variable "description" {
   nullable    = false
 }
 
+variable "homepage_url" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "The repository homepage shown in the about section"
+}
+
 variable "default_branch_name" {
   type        = string
   default     = "main"
   description = "The name of the default branch. Highly recommended to use the default here."
+}
+
+variable "protect_default_branch" {
+  type        = bool
+  default     = true
+  description = "Whether to protected the default branch"
 }
 
 variable "blocked_branches" {

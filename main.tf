@@ -8,11 +8,12 @@ terraform {
 }
 
 resource "github_repository" "main" {
-  name        = var.name
-  description = var.description
-  visibility  = var.is_public ? "public" : "private"
-  is_template = false
-  archived    = var.is_archived
+  name         = var.name
+  description  = var.description
+  homepage_url = var.homepage_url
+  visibility   = var.is_public ? "public" : "private"
+  is_template  = false
+  archived     = var.is_archived
 
   has_issues      = true
   has_discussions = false
@@ -34,6 +35,8 @@ resource "github_branch_default" "main" {
 }
 
 resource "github_branch_protection" "main" {
+  count = var.protect_default_branch ? 1 : 0
+
   repository_id = github_repository.main.id
   pattern       = var.default_branch_name
 
