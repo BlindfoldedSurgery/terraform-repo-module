@@ -29,6 +29,11 @@ resource "github_repository" "main" {
   allow_rebase_merge = true
 }
 
+resource "github_branch" "main" {
+  branch     = "main"
+  repository = github_repository.main.name
+}
+
 resource "github_branch_default" "main" {
   repository = github_repository.main.name
   branch     = var.default_branch_name
