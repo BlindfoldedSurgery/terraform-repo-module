@@ -25,7 +25,7 @@ variable "default_branch_name" {
 
 variable "create_default_branch" {
   type        = bool
-  default     = true
+  default     = false
   description = "Whether to create the default branch."
 }
 
