@@ -30,7 +30,7 @@ resource "github_repository" "main" {
 }
 
 resource "github_branch" "main" {
-  branch     = "main"
+  branch     = var.default_branch_name
   repository = github_repository.main.name
 }
 
