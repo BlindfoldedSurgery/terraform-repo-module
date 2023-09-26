@@ -23,6 +23,12 @@ variable "default_branch_name" {
   description = "The name of the default branch. Highly recommended to use the default here."
 }
 
+variable "create_default_branch" {
+  type        = bool
+  default     = true
+  description = "Whether to create the default branch."
+}
+
 variable "protect_default_branch" {
   type        = bool
   default     = true
