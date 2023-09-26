@@ -31,14 +31,14 @@ resource "github_repository" "main" {
 
 resource "github_branch" "main" {
   count         = var.create_default_branch ? 1 : 0
-  branch     = var.default_branch_name
-  repository = github_repository.main.name
+  branch        = var.default_branch_name
+  repository    = github_repository.main.name
   source_branch = var.default_branch_name
 }
 
 resource "github_branch_default" "main" {
-  repository    = github_repository.main.name
-  branch        = var.default_branch_name
+  repository = github_repository.main.name
+  branch     = var.default_branch_name
 }
 
 resource "github_branch_protection" "main" {
