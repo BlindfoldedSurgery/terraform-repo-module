@@ -57,6 +57,18 @@ variable "enable_actions" {
   description = "Whether GitHub Actions is enabled"
 }
 
+variable "enable_discussions" {
+  type        = bool
+  default     = false
+  description = "Whether GitHub discussions are enabled"
+}
+
+variable "enable_projects" {
+  type        = bool
+  default     = false
+  description = "Whether GitHub Projects are enabled"
+}
+
 variable "required_status_checks" {
   type = list(string)
   default = [

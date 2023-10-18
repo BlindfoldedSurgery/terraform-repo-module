@@ -16,8 +16,8 @@ resource "github_repository" "main" {
   archived     = var.is_archived
 
   has_issues      = true
-  has_discussions = false
-  has_projects    = false
+  has_discussions = var.enable_discussions
+  has_projects    = var.enable_projects
   has_wiki        = false
   has_downloads   = false
 
