@@ -21,3 +21,44 @@ jobs:
       - uses: asdf-vm/actions/install@v3
       - run: terraform init -backend=false
       - run: terraform validate
+
+  bump:
+    runs-on: ubuntu-latest
+    concurrency: release
+    needs:
+      - fmt
+      - validate
+    if: success() && github.ref_name == github.event.repository.default_branch
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install poetry==1.6.1
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+      - run: poetry install --all-extras --no-interaction --no-ansi
+      - run: |
+          git config --global user.name "commitizen"
+          git config --global user.email "commitizen@blindfolded.surgery"
+      - name: Bump version
+        run: |
+          set +e
+          poetry run cz bump
+          EXIT_CODE="$?"
+          set -e
+
+          case $EXIT_CODE in
+          21)
+            exit 0;;
+          0)
+            ;;
+          *)
+            exit $EXIT_CODE;;
+          esac
+          VERSION=$(poetry version --short)
+          MAJOR_VERSION=$(echo $VERSION | cut -d. -f1 -)
+          git tag --force "v$MAJOR_VERSION"
+          git push
+          git push origin "v$VERSION"
+          git push --force origin "v$MAJOR_VERSION"
