@@ -57,8 +57,5 @@ jobs:
             exit $EXIT_CODE;;
           esac
           VERSION=$(poetry version --short)
-          MAJOR_VERSION=$(echo $VERSION | cut -d. -f1 -)
-          git tag --force "v$MAJOR_VERSION"
           git push
           git push origin "v$VERSION"
-          git push --force origin "v$MAJOR_VERSION"
