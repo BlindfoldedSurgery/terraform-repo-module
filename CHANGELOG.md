@@ -1,3 +1,11 @@
+## v3.0.0 (2023-10-21)
+
+### BREAKING CHANGE
+
+- Major tags like v2 will no longer be updated. Starting
+with v3.0.0, no major tag is available anymore. Please use exact version
+tags.
+
 ## v2.0.0 (2023-10-21)
 
 ### BREAKING CHANGE
