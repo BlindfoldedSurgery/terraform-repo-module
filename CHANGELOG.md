@@ -1,3 +1,10 @@
+## v4.0.0 (2023-10-21)
+
+### BREAKING CHANGE
+
+- If you use the default status checks, the affected
+repo should be updated to use the BlindfoldedSurgery reusable workflows.
+
 ## v3.0.0 (2023-10-21)
 
 ### BREAKING CHANGE
