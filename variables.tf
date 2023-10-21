@@ -67,7 +67,7 @@ variable "required_status_checks" {
   type = list(string)
   default = [
     "lint / lint",
-    "test / lint",
+    "test / test",
     "build-container-image / build",
   ]
   description = "The list of status checks that need to pass for PRs"
