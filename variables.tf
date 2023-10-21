@@ -66,9 +66,9 @@ variable "enable_projects" {
 variable "required_status_checks" {
   type = list(string)
   default = [
-    "lint",
-    "test",
-    "build-container-image",
+    "lint / lint",
+    "test / lint",
+    "build-container-image / build",
   ]
   description = "The list of status checks that need to pass for PRs"
 }
