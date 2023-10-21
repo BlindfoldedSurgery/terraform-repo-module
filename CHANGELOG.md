@@ -1,3 +1,9 @@
+## v4.0.1 (2023-10-21)
+
+### Fix
+
+- Fix default status check names
+
 ## v4.0.0 (2023-10-21)
 
 ### BREAKING CHANGE
