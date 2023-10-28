@@ -48,6 +48,8 @@ resource "github_branch_protection" "main" {
 }
 
 resource "github_repository_ruleset" "blocked" {
+  count = length(var.blocked_branches) > 0 ? 1 : 0
+
   name        = "Forbidden branches"
   repository  = github_repository.main.name
   target      = "branch"
