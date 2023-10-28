@@ -22,10 +22,24 @@ jobs:
       - run: terraform init -backend=false
       - run: terraform validate
 
+  check-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install poetry==1.6.1
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+      - run: poetry install --all-extras --no-interaction --no-ansi
+      - run: poetry run cz check --rev-range origin/main..HEAD
+
   bump:
     runs-on: ubuntu-latest
     concurrency: release
     needs:
+      - check-commits
       - fmt
       - validate
     if: success() && github.ref_name == github.event.repository.default_branch
