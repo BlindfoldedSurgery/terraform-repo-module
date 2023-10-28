@@ -2,7 +2,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "~> 5.0"
+      version = "~> 5.35"
     }
   }
 }
@@ -47,15 +47,24 @@ resource "github_branch_protection" "main" {
   }
 }
 
-resource "github_branch_protection" "blocked" {
-  for_each = toset(var.blocked_branches)
+resource "github_repository_ruleset" "blocked" {
+  name        = "Forbidden branches"
+  repository  = github_repository.main.name
+  target      = "branch"
+  enforcement = "active"
 
-  repository_id = github_repository.main.id
-  pattern       = each.key
+  conditions {
+    ref_name {
+      include = var.blocked_branches
+      exclude = []
+    }
+  }
 
-  enforce_admins = true
-  lock_branch    = true
-  # blocks_creations = true
+  rules {
+    creation         = false
+    update           = false
+    non_fast_forward = false
+  }
 }
 
 resource "github_actions_repository_permissions" "if_enabled" {
