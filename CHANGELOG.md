@@ -1,3 +1,9 @@
+## v4.2.0 (2023-10-28)
+
+### Feat
+
+- Add option to prevent admins from bypassing default branch protection
+
 ## v4.1.3 (2023-10-28)
 
 ### Fix
