@@ -57,7 +57,7 @@ resource "github_repository_ruleset" "blocked" {
 
   conditions {
     ref_name {
-      include = var.blocked_branches
+      include = formatlist("refs/heads/%s", var.blocked_branches)
       exclude = []
     }
   }
