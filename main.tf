@@ -45,6 +45,8 @@ resource "github_branch_protection" "main" {
   required_status_checks {
     contexts = var.required_status_checks
   }
+
+  enforce_admins = !var.allow_default_branch_protection_bypass
 }
 
 resource "github_repository_ruleset" "blocked" {
