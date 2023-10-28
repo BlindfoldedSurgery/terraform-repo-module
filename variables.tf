@@ -29,6 +29,12 @@ variable "protect_default_branch" {
   description = "Whether to protected the default branch"
 }
 
+variable "allow_default_branch_protection_bypass" {
+  type        = bool
+  default     = true
+  description = "Allow administrators to bypass the branch protection for the default branch."
+}
+
 variable "blocked_branches" {
   type        = list(string)
   default     = ["master"]
