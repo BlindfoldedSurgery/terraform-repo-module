@@ -70,8 +70,8 @@ jobs:
           *)
             exit $EXIT_CODE;;
           esac
-          VERSION=$(poetry version --short)
           
+          VERSION=$(poetry version --short)
           git switch -c bump-version
           git push origin bump-version
           git push origin "v$VERSION"
