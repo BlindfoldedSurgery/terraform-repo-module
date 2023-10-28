@@ -22,7 +22,13 @@ jobs:
       - run: terraform init -backend=false
       - run: terraform validate
 
-  commitizen:
-    uses: BlindfoldedSurgery/actions-actions/.github/workflows/commitizen.yml@v1
+  check-commits:
+    uses: BlindfoldedSurgery/actions-actions/.github/workflows/commitizen-check.yml@v2
+
+  bump-version:
+    needs:
+      - fmt
+      - validate
+    uses: BlindfoldedSurgery/actions-actions/.github/workflows/commitizen-bump.yml@v2
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
