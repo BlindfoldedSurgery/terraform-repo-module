@@ -1,3 +1,9 @@
+## v4.1.2 (2023-10-28)
+
+### Fix
+
+- Fully qualify branch names with refs/heads/ prefix
+
 ## v4.1.1 (2023-10-28)
 
 ### Fix
