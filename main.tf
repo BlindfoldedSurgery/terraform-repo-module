@@ -63,9 +63,9 @@ resource "github_repository_ruleset" "blocked" {
   }
 
   rules {
-    creation         = false
-    update           = false
-    non_fast_forward = false
+    creation         = true
+    update           = true
+    non_fast_forward = true
   }
 }
 
