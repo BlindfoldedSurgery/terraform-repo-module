@@ -1,3 +1,9 @@
+## v4.1.0 (2023-10-28)
+
+### Feat
+
+- Realize branch blocking using a ruleset
+
 ## v4.0.1 (2023-10-21)
 
 ### Fix
