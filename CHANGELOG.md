@@ -1,3 +1,9 @@
+## v4.1.1 (2023-10-28)
+
+### Fix
+
+- Don't try to create rules without conditions
+
 ## v4.1.0 (2023-10-28)
 
 ### Feat
