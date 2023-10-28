@@ -1,3 +1,9 @@
+## v4.1.3 (2023-10-28)
+
+### Fix
+
+- Actually enforce blocked branches in ruleset
+
 ## v4.1.2 (2023-10-28)
 
 ### Fix
