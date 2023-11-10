@@ -75,6 +75,7 @@ variable "required_status_checks" {
     "lint / lint",
     "test / test",
     "build-container-image / build",
+    "validate-renovate-config / validate",
   ]
   description = "The list of status checks that need to pass for PRs"
 }
