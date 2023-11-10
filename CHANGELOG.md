@@ -1,3 +1,14 @@
+## v5.0.0 (2023-11-10)
+
+### BREAKING CHANGE
+
+- This adds a new required status check to the default
+list. Add the following job to your projects to include this job:
+```yaml
+validate-renovate-config:
+  uses: BlindfoldedSurgery/renovate-config/.github/workflows/validate.yml@main
+```
+
 ## v4.3.0 (2023-10-28)
 
 ### Feat
