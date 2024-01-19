@@ -79,3 +79,9 @@ variable "required_status_checks" {
   ]
   description = "The list of status checks that need to pass for PRs"
 }
+
+variable "allow_squash_merge" {
+  type        = bool
+  default     = false
+  description = "Allow PRs to be merged by squashing the PR's commits"
+}

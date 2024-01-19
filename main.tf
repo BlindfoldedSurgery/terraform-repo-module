@@ -25,7 +25,7 @@ resource "github_repository" "main" {
   delete_branch_on_merge = true
 
   allow_merge_commit = false
-  allow_squash_merge = true
+  allow_squash_merge = var.allow_squash_merge
   allow_rebase_merge = true
 }
 
