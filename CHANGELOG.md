@@ -1,3 +1,13 @@
+## v6.0.0 (2024-01-19)
+
+### BREAKING CHANGE
+
+- This update disables the option to merge PRs by
+squashing. Can be overriden using the new `allow_squash_merge` variable.
+
+
+- Disable squash-and-merge by default
+
 ## v5.0.0 (2023-11-10)
 
 ### BREAKING CHANGE
