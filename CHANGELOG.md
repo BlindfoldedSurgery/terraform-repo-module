@@ -1,3 +1,13 @@
+## Unreleased
+
+### BREAKING CHANGE
+
+- deps: Update `github` provider to 6.x
+
+### Fix
+
+- Disable Poetry package-mode
+
 ## v6.0.0 (2024-01-19)
 
 ### BREAKING CHANGE
