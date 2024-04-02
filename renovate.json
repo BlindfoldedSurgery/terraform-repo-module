@@ -2,5 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>BlindfoldedSurgery/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "matchDepNames": ["github"],
+      "semanticCommitType": "feat!"
+    }
   ]
 }
