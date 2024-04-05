@@ -85,3 +85,9 @@ variable "allow_squash_merge" {
   default     = false
   description = "Allow PRs to be merged by squashing the PR's commits"
 }
+
+variable "enable_argocd_rules" {
+  type        = bool
+  default     = false
+  description = "Add branch protection for an argocd branch."
+}

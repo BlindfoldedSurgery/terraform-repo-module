@@ -49,6 +49,21 @@ resource "github_branch_protection" "main" {
   enforce_admins = !var.allow_default_branch_protection_bypass
 }
 
+resource "github_branch_protection" "argocd" {
+  count = var.enable_argocd_rules ? 1 : 0
+
+  repository_id = github_repository.main.id
+  pattern       = "argocd"
+
+  required_linear_history = true
+
+  required_status_checks {
+    contexts = var.required_status_checks
+  }
+
+  enforce_admins = true
+}
+
 resource "github_repository_ruleset" "blocked" {
   count = length(var.blocked_branches) > 0 ? 1 : 0
 
