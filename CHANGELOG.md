@@ -1,3 +1,9 @@
+## v7.1.0 (2024-04-05)
+
+### Feat
+
+- Add option to add argocd branch rules
+
 ## v7.0.0 (2024-04-02)
 
 ### Fix
