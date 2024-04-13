@@ -53,7 +53,7 @@ resource "github_branch_protection" "argocd" {
   count = var.enable_argocd_rules ? 1 : 0
 
   repository_id = github_repository.main.id
-  pattern       = "argocd"
+  pattern       = "release"
 
   required_linear_history = true
 
