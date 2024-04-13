@@ -1,3 +1,9 @@
+## v7.1.1 (2024-04-13)
+
+### Fix
+
+- change argocd release branch name
+
 ## v7.1.0 (2024-04-05)
 
 ### Feat
