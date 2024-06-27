@@ -6,7 +6,13 @@
   "packageRules": [
     {
       "matchDepNames": ["github"],
+      "matchUpdateTypes": ["major"],
       "semanticCommitType": "feat!"
+    },
+    {
+      "matchDepNames": ["github"],
+      "matchUpdateTypes": ["minor"],
+      "semanticCommitType": "feat"
     },
     {
       "matchDepNames": ["terraform"],
