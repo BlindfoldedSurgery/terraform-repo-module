@@ -7,6 +7,11 @@
     {
       "matchDepNames": ["github"],
       "semanticCommitType": "feat!"
+    },
+    {
+      "matchDepNames": ["terraform"],
+      "matchUpdateTypes": ["minor"],
+      "semanticCommitType": "feat"
     }
   ]
 }
