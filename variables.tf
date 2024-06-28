@@ -88,6 +88,6 @@ variable "allow_squash_merge" {
 
 variable "enable_argocd_rules" {
   type        = bool
-  default     = false
+  default     = true
   description = "Add branch protection for an Argo CD 'release' branch."
 }
