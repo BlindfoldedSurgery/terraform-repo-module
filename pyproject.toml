@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "terraform-repo-module"
 description = "A Terraform module allowing us to administer GitHub repositories."
-version = "7.1.1"
+version = "7.2.0"
 authors = ["BlindfoldedSurgery <team@blindfolded.surgery>"]
 license = "MIT"
 readme = "README.md"

@@ -1,3 +1,9 @@
+## v7.2.0 (2024-06-28)
+
+### Feat
+
+- Enable Argo CD branch protection by default
+
 ## v7.1.1 (2024-04-13)
 
 ### Fix
