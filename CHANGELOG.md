@@ -1,3 +1,9 @@
+## v7.3.2 (2024-09-15)
+
+### Fix
+
+- Allow all GitHub 6.x.x versions
+
 ## v7.3.1 (2024-09-15)
 
 ### Fix
