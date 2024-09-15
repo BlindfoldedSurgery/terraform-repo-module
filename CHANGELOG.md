@@ -1,3 +1,9 @@
+## v7.3.0 (2024-09-15)
+
+### Feat
+
+- **deps**: update terraform github to ~> 6.3.0
+
 ## v7.2.0 (2024-06-28)
 
 ### Feat
