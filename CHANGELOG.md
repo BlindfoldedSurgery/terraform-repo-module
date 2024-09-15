@@ -1,3 +1,9 @@
+## v7.3.1 (2024-09-15)
+
+### Fix
+
+- loosen GitHub provider constraints
+
 ## v7.3.0 (2024-09-15)
 
 ### Feat
