@@ -1,3 +1,9 @@
+## v7.4.0 (2024-12-04)
+
+### Feat
+
+- **deps**: update dependency terraform to v1.10.1
+
 ## v7.3.3 (2024-10-06)
 
 ### Fix
