@@ -7,21 +7,21 @@ on:
 
 
 jobs:
-  validate-renovate-config:
-    uses: BlindfoldedSurgery/renovate-config/.github/workflows/validate.yml@main
+  required-meta:
+    uses: BlindfoldedSurgery/actions-meta/.github/workflows/required.yml@v1
 
   fmt:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: asdf-vm/actions/install@v3
+      - uses: jdx/mise-action@v2
       - run: terraform fmt -check
 
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: asdf-vm/actions/install@v3
+      - uses: jdx/mise-action@v2
       - run: terraform init -backend=false
       - run: terraform validate
 
