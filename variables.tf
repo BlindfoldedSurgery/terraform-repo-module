@@ -91,3 +91,8 @@ variable "enable_argocd_rules" {
   default     = true
   description = "Add branch protection for an Argo CD 'release' branch."
 }
+
+variable "include_required_meta_checks" {
+  type    = bool
+  default = true
+}

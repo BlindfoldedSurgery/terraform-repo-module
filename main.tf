@@ -43,7 +43,17 @@ resource "github_branch_protection" "main" {
   required_linear_history = true
 
   required_status_checks {
-    contexts = var.required_status_checks
+    contexts = var.include_required_meta_checks ? tolist(sort(
+      toset(
+        concat(
+          var.required_status_checks,
+          [
+            "required-meta / actionlint",
+            "required-meta / validate-renovate-config / validate",
+          ],
+        )
+      )
+    )) : var.required_status_checks
   }
 
   enforce_admins = !var.allow_default_branch_protection_bypass
