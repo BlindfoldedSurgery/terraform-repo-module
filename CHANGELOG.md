@@ -1,3 +1,9 @@
+## v8.0.0 (2024-12-06)
+
+### Feat
+
+- Add actions-meta required workflow
+
 ## v7.4.0 (2024-12-04)
 
 ### Feat
