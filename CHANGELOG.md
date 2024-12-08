@@ -1,3 +1,9 @@
+## v8.0.1 (2024-12-08)
+
+### Fix
+
+- Remove validate-renovate-config from default status checks
+
 ## v8.0.0 (2024-12-06)
 
 ### Feat
