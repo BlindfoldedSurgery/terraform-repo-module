@@ -48,7 +48,6 @@ resource "github_branch_protection" "main" {
         concat(
           var.required_status_checks,
           [
-            "actionlint",
             "required-meta / actionlint",
             "required-meta / validate-renovate-config / validate",
           ],
