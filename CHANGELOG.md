@@ -1,3 +1,9 @@
+## v8.0.2 (2024-12-13)
+
+### Fix
+
+- Require actionlint status check
+
 ## v8.0.1 (2024-12-08)
 
 ### Fix
