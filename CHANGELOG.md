@@ -1,3 +1,9 @@
+## v8.0.3 (2024-12-13)
+
+### Fix
+
+- Revert actionlint requirement
+
 ## v8.0.2 (2024-12-13)
 
 ### Fix
