@@ -1,3 +1,9 @@
+## v9.0.2 (2025-01-07)
+
+### Fix
+
+- Only require meta status checks for release branch
+
 ## v9.0.1 (2025-01-07)
 
 ### Fix
