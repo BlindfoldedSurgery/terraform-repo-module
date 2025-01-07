@@ -1,3 +1,12 @@
+## v9.0.0 (2025-01-07)
+
+### BREAKING CHANGE
+
+- projects should follow best practices and provide
+dual-arch container images. Thus, the build-container-image job is no
+longer required, instead the dual arch build jobs should be followed
+by an artificial "post-build-container-images" job.
+
 ## v8.0.3 (2024-12-13)
 
 ### Fix
