@@ -68,7 +68,7 @@ resource "github_branch_protection" "argocd" {
   required_linear_history = true
 
   required_status_checks {
-    contexts = var.required_status_checks
+    contexts = ["deploy"]
   }
 
   enforce_admins = true
