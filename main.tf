@@ -7,6 +7,13 @@ terraform {
   }
 }
 
+locals {
+  required_meta_status_checks = [
+    "required-meta / actionlint",
+    "required-meta / validate-renovate-config / validate",
+  ]
+}
+
 resource "github_repository" "main" {
   name         = var.name
   description  = var.description
@@ -47,10 +54,7 @@ resource "github_branch_protection" "main" {
       toset(
         concat(
           var.required_status_checks,
-          [
-            "required-meta / actionlint",
-            "required-meta / validate-renovate-config / validate",
-          ],
+          local.required_meta_status_checks,
         )
       )
     )) : var.required_status_checks
@@ -68,7 +72,7 @@ resource "github_branch_protection" "argocd" {
   required_linear_history = true
 
   required_status_checks {
-    contexts = ["deploy"]
+    contexts = local.required_meta_status_checks
   }
 
   enforce_admins = true
