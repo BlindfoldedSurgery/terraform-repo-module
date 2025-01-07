@@ -1,3 +1,9 @@
+## v9.0.1 (2025-01-07)
+
+### Fix
+
+- Only require deploy job for release branch
+
 ## v9.0.0 (2025-01-07)
 
 ### BREAKING CHANGE
