@@ -74,7 +74,7 @@ variable "required_status_checks" {
   default = [
     "lint / lint",
     "test / test",
-    "build-container-image / build",
+    "post-build-container-image",
   ]
   description = "The list of status checks that need to pass for PRs"
 }
