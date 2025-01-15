@@ -37,7 +37,7 @@ resource "github_repository" "main" {
 
   security_and_analysis {
     secret_scanning {
-      status = var.is_public ? "enabled" : "disabled"
+      status = var.is_public && !var.is_archived ? "enabled" : "disabled"
     }
   }
 }
