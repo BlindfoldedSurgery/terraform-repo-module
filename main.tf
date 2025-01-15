@@ -39,6 +39,10 @@ resource "github_repository" "main" {
     secret_scanning {
       status = var.is_public && !var.is_archived ? "enabled" : "disabled"
     }
+
+    secret_scanning_push_protection {
+      status = "disabled"
+    }
   }
 }
 
