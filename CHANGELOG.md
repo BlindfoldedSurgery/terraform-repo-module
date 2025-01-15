@@ -1,3 +1,9 @@
+## v9.1.2 (2025-01-15)
+
+### Fix
+
+- explicitly disable push protection
+
 ## v9.1.1 (2025-01-15)
 
 ### Fix
