@@ -1,7 +1,7 @@
 [project]
 name = "terraform-repo-module"
 description = "A Terraform module allowing us to administer GitHub repositories."
-version = "9.1.1"
+version = "9.1.2"
 authors = [
     { email = "team@blindfolded.surgery", name = "BlindfoldedSurgery" }
 ]
