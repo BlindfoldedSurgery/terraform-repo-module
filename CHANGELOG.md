@@ -1,3 +1,9 @@
+## v9.1.1 (2025-01-15)
+
+### Fix
+
+- Don't enable secret scanning on archived projects
+
 ## v9.1.0 (2025-01-15)
 
 ### Feat
