@@ -34,6 +34,12 @@ resource "github_repository" "main" {
   allow_merge_commit = false
   allow_squash_merge = var.allow_squash_merge
   allow_rebase_merge = true
+
+  security_and_analysis {
+    secret_scanning {
+      status = var.is_public ? "enabled" : "disabled"
+    }
+  }
 }
 
 resource "github_branch_default" "main" {
