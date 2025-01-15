@@ -1,3 +1,9 @@
+## v9.1.0 (2025-01-15)
+
+### Feat
+
+- enable secret scanning on public repositories
+
 ## v9.0.2 (2025-01-07)
 
 ### Fix
