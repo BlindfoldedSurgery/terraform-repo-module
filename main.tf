@@ -35,13 +35,15 @@ resource "github_repository" "main" {
   allow_squash_merge = var.allow_squash_merge
   allow_rebase_merge = true
 
-  security_and_analysis {
-    secret_scanning {
-      status = var.is_public && !var.is_archived ? "enabled" : "disabled"
-    }
-
-    secret_scanning_push_protection {
-      status = "disabled"
+  dynamic "security_and_analysis" {
+    for_each = toset(var.is_public && !var.is_archived ? ["active"] : [])
+    content {
+      secret_scanning {
+        status = var.is_public && !var.is_archived ? "enabled" : "disabled"
+      }
+      secret_scanning_push_protection {
+        status = "disabled"
+      }
     }
   }
 }
