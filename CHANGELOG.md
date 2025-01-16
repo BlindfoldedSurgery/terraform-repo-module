@@ -1,3 +1,9 @@
+## v9.1.3 (2025-01-16)
+
+### Fix
+
+- put secret scanning in a dynamic block
+
 ## v9.1.2 (2025-01-15)
 
 ### Fix
