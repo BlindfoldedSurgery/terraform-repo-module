@@ -39,7 +39,7 @@ resource "github_repository" "main" {
     for_each = toset(var.is_public && !var.is_archived ? ["active"] : [])
     content {
       secret_scanning {
-        status = var.is_public && !var.is_archived ? "enabled" : "disabled"
+        status = "enabled"
       }
       secret_scanning_push_protection {
         status = "disabled"
