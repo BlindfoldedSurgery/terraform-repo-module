@@ -1,6 +1,6 @@
 [tools]
 python = "3.13"
-terraform = "1.10.5"
+terraform = "1.11.0"
 uv = "0.5"
 
 [env]
