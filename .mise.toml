@@ -1,7 +1,7 @@
 [tools]
 python = "3.13"
 terraform = "1.11.2"
-uv = "0.6.8"
+uv = "0.6.9"
 
 [env]
 _.python.venv = { path = '.venv', create = true }
