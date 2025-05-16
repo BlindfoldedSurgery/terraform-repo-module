@@ -1,3 +1,9 @@
+## v9.3.0 (2025-05-16)
+
+### Feat
+
+- **deps**: update dependency terraform to v1.12.0
+
 ## v9.2.0 (2025-02-27)
 
 ### Feat
