@@ -46,6 +46,12 @@ resource "github_repository" "main" {
       }
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      template,
+    ]
+  }
 }
 
 resource "github_branch_default" "main" {
