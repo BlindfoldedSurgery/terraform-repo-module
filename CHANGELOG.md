@@ -1,3 +1,9 @@
+## v9.4.1 (2025-10-03)
+
+### Fix
+
+- ignore repository template
+
 ## v9.4.0 (2025-09-05)
 
 ### Feat
