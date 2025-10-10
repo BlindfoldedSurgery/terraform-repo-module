@@ -28,7 +28,7 @@ jobs:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v4
     with:
       build-tool: uv
-      python-version: '3.13'
+      python-version: '3.14'
 
   bump-version:
     needs:
@@ -37,6 +37,6 @@ jobs:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v4
     with:
       build-tool: uv
-      python-version: '3.13'
+      python-version: '3.14'
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
