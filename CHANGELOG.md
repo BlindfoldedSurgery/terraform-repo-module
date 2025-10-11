@@ -1,3 +1,9 @@
+## v10.0.1 (2025-10-11)
+
+### Fix
+
+- properly set actions status
+
 ## v10.0.0 (2025-10-11)
 
 ### Feat
