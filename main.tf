@@ -36,7 +36,7 @@ resource "github_repository" "main" {
   allow_rebase_merge = true
 
   dynamic "security_and_analysis" {
-    for_each = toset(var.is_public && !var.is_archived ? ["active"] : [])
+    for_each = toset(var.is_public && !var.is_archive_prepared ? ["active"] : [])
     content {
       secret_scanning {
         status = "enabled"
@@ -60,7 +60,7 @@ resource "github_branch_default" "main" {
 }
 
 resource "github_branch_protection" "main" {
-  count = var.protect_default_branch ? 1 : 0
+  count = !var.is_archive_prepared && var.protect_default_branch ? 1 : 0
 
   repository_id = github_repository.main.id
   pattern       = var.default_branch_name
@@ -82,7 +82,7 @@ resource "github_branch_protection" "main" {
 }
 
 resource "github_branch_protection" "argocd" {
-  count = var.enable_argocd_rules ? 1 : 0
+  count = !var.is_archive_prepared && var.enable_argocd_rules ? 1 : 0
 
   repository_id = github_repository.main.id
   pattern       = "release"
@@ -97,7 +97,7 @@ resource "github_branch_protection" "argocd" {
 }
 
 resource "github_repository_ruleset" "blocked" {
-  count = length(var.blocked_branches) > 0 ? 1 : 0
+  count = !var.is_archive_prepared && length(var.blocked_branches) > 0 ? 1 : 0
 
   name        = "Forbidden branches"
   repository  = github_repository.main.name
@@ -119,14 +119,14 @@ resource "github_repository_ruleset" "blocked" {
 }
 
 resource "github_actions_repository_permissions" "if_enabled" {
-  count           = var.enable_actions ? 1 : 0
+  count           = !var.is_archive_prepared && var.enable_actions ? 1 : 0
   enabled         = true
   allowed_actions = "all"
   repository      = github_repository.main.name
 }
 
 resource "github_actions_repository_permissions" "if_disabled" {
-  count      = var.enable_actions ? 0 : 1
+  count      = !var.is_archive_prepared && var.enable_actions ? 0 : 1
   enabled    = false
   repository = github_repository.main.name
 }

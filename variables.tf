@@ -46,6 +46,12 @@ variable "is_public" {
   default = true
 }
 
+variable "is_archive_prepared" {
+  type        = bool
+  default     = false
+  description = "Prepare for archival"
+}
+
 variable "is_archived" {
   type    = bool
   default = false
