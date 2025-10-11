@@ -126,7 +126,7 @@ resource "github_actions_repository_permissions" "if_enabled" {
 }
 
 resource "github_actions_repository_permissions" "if_disabled" {
-  count      = !var.is_archive_prepared && var.enable_actions ? 0 : 1
+  count      = var.is_archive_prepared || !var.enable_actions ? 1 : 0
   enabled    = false
   repository = github_repository.main.name
 }
