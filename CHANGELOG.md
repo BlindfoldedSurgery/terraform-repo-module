@@ -1,3 +1,9 @@
+## v10.0.0 (2025-10-11)
+
+### Feat
+
+- add is_archive_prepared variable
+
 ## v9.4.1 (2025-10-03)
 
 ### Fix
