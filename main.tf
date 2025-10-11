@@ -12,6 +12,15 @@ locals {
     "required-meta / actionlint",
     "required-meta / validate-renovate-config / validate",
   ]
+
+  required_status_checks = var.include_required_meta_checks ? tolist(sort(
+    toset(
+      concat(
+        var.required_status_checks,
+        local.required_meta_status_checks,
+      )
+    )
+  )) : var.required_status_checks
 }
 
 resource "github_repository" "main" {
@@ -59,41 +68,96 @@ resource "github_branch_default" "main" {
   branch     = var.default_branch_name
 }
 
-resource "github_branch_protection" "main" {
+resource "github_repository_ruleset" "default_forceless" {
   count = !var.is_archive_prepared && var.protect_default_branch ? 1 : 0
 
-  repository_id = github_repository.main.id
-  pattern       = var.default_branch_name
+  name        = "Default Branch - No Force Push"
+  repository  = github_repository.main.name
+  target      = "branch"
+  enforcement = "active"
 
-  required_linear_history = true
-
-  required_status_checks {
-    contexts = var.include_required_meta_checks ? tolist(sort(
-      toset(
-        concat(
-          var.required_status_checks,
-          local.required_meta_status_checks,
-        )
-      )
-    )) : var.required_status_checks
+  conditions {
+    ref_name {
+      include = ["~DEFAULT_BRANCH"]
+      exclude = []
+    }
   }
 
-  enforce_admins = !var.allow_default_branch_protection_bypass
+  rules {
+    deletion         = true
+    non_fast_forward = true
+  }
 }
 
-resource "github_branch_protection" "argocd" {
-  count = !var.is_archive_prepared && var.enable_argocd_rules ? 1 : 0
+resource "github_repository_ruleset" "default_checks" {
+  count = !var.is_archive_prepared && var.protect_default_branch ? 1 : 0
 
-  repository_id = github_repository.main.id
-  pattern       = "release"
+  name        = "Default Branch - Checks"
+  repository  = github_repository.main.name
+  target      = "branch"
+  enforcement = "active"
 
-  required_linear_history = true
-
-  required_status_checks {
-    contexts = local.required_meta_status_checks
+  conditions {
+    ref_name {
+      include = ["~DEFAULT_BRANCH"]
+      exclude = []
+    }
   }
 
-  enforce_admins = true
+  dynamic "bypass_actors" {
+    for_each = toset(var.allow_default_branch_protection_bypass ? ["active"] : [])
+
+    content {
+      # Admins have ID 5
+      actor_id    = 5
+      actor_type  = "RepositoryRole"
+      bypass_mode = "always"
+    }
+  }
+
+  rules {
+    required_status_checks {
+      dynamic "required_check" {
+        for_each = toset(local.required_status_checks)
+
+        content {
+          context = required_check.key
+        }
+      }
+    }
+  }
+}
+
+resource "github_repository_ruleset" "argocd" {
+  count = !var.is_archive_prepared && var.enable_argocd_rules ? 1 : 0
+
+  name        = "ArgoCD Branch"
+  repository  = github_repository.main.name
+  target      = "branch"
+  enforcement = "active"
+
+  conditions {
+    ref_name {
+      include = ["refs/heads/release"]
+      exclude = []
+    }
+  }
+
+  rules {
+    deletion                = true
+    non_fast_forward        = true
+    required_linear_history = true
+
+    required_status_checks {
+      dynamic "required_check" {
+        for_each = toset(local.required_meta_status_checks)
+
+        content {
+          context = required_check.key
+        }
+      }
+    }
+  }
 }
 
 resource "github_repository_ruleset" "blocked" {
