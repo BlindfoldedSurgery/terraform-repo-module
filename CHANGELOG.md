@@ -1,3 +1,9 @@
+## v10.1.1 (2025-10-17)
+
+### Fix
+
+- add integration ID to required status checks
+
 ## v10.1.0 (2025-10-11)
 
 ### Feat
