@@ -121,7 +121,9 @@ resource "github_repository_ruleset" "default_checks" {
         for_each = toset(local.required_status_checks)
 
         content {
-          context = required_check.key
+          # That's GitHub Actions
+          integration_id = 15368
+          context        = required_check.key
         }
       }
     }
