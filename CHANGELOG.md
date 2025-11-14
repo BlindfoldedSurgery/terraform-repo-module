@@ -1,3 +1,12 @@
+## v11.0.0 (2025-11-14)
+
+### Feat
+
+- set restrictive workflow permissions
+
+
+- update minimum GitHub provider version to 6.8
+
 ## v10.1.1 (2025-10-17)
 
 ### Fix
