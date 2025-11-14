@@ -191,6 +191,14 @@ resource "github_actions_repository_permissions" "if_enabled" {
   repository      = github_repository.main.name
 }
 
+resource "github_workflow_repository_permissions" "default" {
+  count = !var.is_archive_prepared && var.enable_actions ? 1 : 0
+
+  repository                       = github_repository.main.name
+  can_approve_pull_request_reviews = false
+  default_workflow_permissions     = "read"
+}
+
 resource "github_actions_repository_permissions" "if_disabled" {
   count      = var.is_archive_prepared || !var.enable_actions ? 1 : 0
   enabled    = false
