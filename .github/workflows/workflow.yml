@@ -32,7 +32,7 @@ jobs:
       - run: terraform validate
 
   check-commits:
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v4
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v5
     with:
       build-tool: uv
       python-version: '3.14'
@@ -41,7 +41,7 @@ jobs:
     needs:
       - fmt
       - validate
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v4
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v5
     permissions:
       contents: write
       pull-requests: write
