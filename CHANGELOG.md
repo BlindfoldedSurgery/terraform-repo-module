@@ -1,3 +1,9 @@
+## v11.1.0 (2025-11-19)
+
+### Feat
+
+- **deps**: update dependency terraform to v1.14.0
+
 ## v11.0.0 (2025-11-14)
 
 ### Feat
