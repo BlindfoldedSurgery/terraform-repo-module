@@ -35,7 +35,6 @@ resource "github_repository" "main" {
   has_discussions = var.enable_discussions
   has_projects    = var.enable_projects
   has_wiki        = false
-  has_downloads   = false
 
   allow_auto_merge       = true
   delete_branch_on_merge = true
