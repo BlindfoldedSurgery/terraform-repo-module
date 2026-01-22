@@ -1,3 +1,9 @@
+## v11.1.1 (2026-01-22)
+
+### Fix
+
+- remove deprecated has_downloads option
+
 ## v11.1.0 (2025-11-19)
 
 ### Feat
