@@ -1,3 +1,9 @@
+## v11.1.2 (2026-04-16)
+
+### Fix
+
+- ignore etag changes for rulesets
+
 ## v11.1.1 (2026-01-22)
 
 ### Fix
