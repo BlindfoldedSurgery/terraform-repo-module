@@ -86,6 +86,12 @@ resource "github_repository_ruleset" "default_forceless" {
     deletion         = true
     non_fast_forward = true
   }
+
+  lifecycle {
+    ignore_changes = [
+      etag,
+    ]
+  }
 }
 
 resource "github_repository_ruleset" "default_checks" {
@@ -127,6 +133,12 @@ resource "github_repository_ruleset" "default_checks" {
       }
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      etag,
+    ]
+  }
 }
 
 resource "github_repository_ruleset" "argocd" {
@@ -159,6 +171,12 @@ resource "github_repository_ruleset" "argocd" {
       }
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      etag,
+    ]
+  }
 }
 
 resource "github_repository_ruleset" "blocked" {
@@ -180,6 +198,12 @@ resource "github_repository_ruleset" "blocked" {
     creation         = true
     update           = true
     non_fast_forward = true
+  }
+
+  lifecycle {
+    ignore_changes = [
+      etag,
+    ]
   }
 }
 
