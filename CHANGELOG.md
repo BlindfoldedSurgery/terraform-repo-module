@@ -1,3 +1,9 @@
+## v11.1.4 (2026-04-16)
+
+### Fix
+
+- remove redundant etag ignores
+
 ## v11.1.3 (2026-04-16)
 
 ### Fix
