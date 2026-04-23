@@ -1,3 +1,9 @@
+## v11.1.5 (2026-04-23)
+
+### Fix
+
+- **deps**: update dependency pre-commit to v4.6.0
+
 ## v11.1.4 (2026-04-16)
 
 ### Fix
