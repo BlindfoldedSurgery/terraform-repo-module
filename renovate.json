@@ -5,18 +5,36 @@
   ],
   "packageRules": [
     {
-      "matchDepNames": ["github"],
-      "matchUpdateTypes": ["major"],
+      "matchManagers": [
+        "terraform"
+      ],
+      "rangeStrategy": "replace"
+    },
+    {
+      "matchDepNames": [
+        "github"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "semanticCommitType": "feat!"
     },
     {
-      "matchDepNames": ["github"],
-      "matchUpdateTypes": ["minor"],
+      "matchDepNames": [
+        "github"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
       "semanticCommitType": "feat"
     },
     {
-      "matchDepNames": ["terraform"],
-      "matchUpdateTypes": ["minor"],
+      "matchDepNames": [
+        "terraform"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ],
       "semanticCommitType": "feat"
     }
   ]
