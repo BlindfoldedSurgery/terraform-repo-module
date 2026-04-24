@@ -300,7 +300,7 @@ wheels = [
 
 [[package]]
 name = "terraform-repo-module"
-version = "11.1.5"
+version = "11.1.6"
 source = { virtual = "." }
 dependencies = [
     { name = "commitizen" },

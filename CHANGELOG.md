@@ -1,3 +1,9 @@
+## v11.1.6 (2026-04-24)
+
+### Fix
+
+- unpin github dependency
+
 ## v11.1.5 (2026-04-23)
 
 ### Fix
