@@ -1,3 +1,9 @@
+## v11.3.0 (2026-08-29)
+
+### Feat
+
+- **deps**: update dependency terraform to v1.16.0
+
 ## v11.2.2 (2026-08-17)
 
 ### Fix
