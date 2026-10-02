@@ -1,4 +1,4 @@
 [tools]
 python = "3.14"
-terraform = "1.16.4"
+terraform = "1.16.5"
 uv = "0.12.22"
