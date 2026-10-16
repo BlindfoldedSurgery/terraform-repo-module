@@ -1,3 +1,9 @@
+## v11.3.1 (2026-10-16)
+
+### Fix
+
+- **deps**: update dependency pre-commit to v4.7.0
+
 ## v11.3.0 (2026-08-29)
 
 ### Feat
